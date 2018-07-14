@@ -23,3 +23,11 @@ _AutoSignature Executable in Golang_
  ``` 
 
 You can use the hash to verification of the version on internet o can use it like "tokenCode" in a package like my other project [controlrun](https://github.com/jonathanhecl/controlrun)
+
+## Screenshots
+
+### Running
+![Running](https://i.imgur.com/MSjuj1I.png)
+
+### AutoSign
+![AutoSign](https://i.imgur.com/TjRdmnq.png)
