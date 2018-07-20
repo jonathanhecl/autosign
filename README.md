@@ -21,6 +21,7 @@ _AutoSignature Executable in Golang_
  ```
     hash := autosign.Init()
  ``` 
+You can add a Salt with Init([]byte("salt"))
 
 You can use the hash to verification of the version on internet o can use it like "tokenCode" in a package like my other project [controlrun](https://github.com/jonathanhecl/controlrun)
 

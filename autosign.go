@@ -22,7 +22,7 @@ func checkError(e error) {
 	}
 }
 
-func Init() string {
+func Init(salt ...[]byte) string {
 
 	var err error = nil
 	var needSign bool = true
@@ -55,6 +55,11 @@ func Init() string {
 
 	}
 	checkError(err)
+
+	if len(salt) > 0 {
+		_, err = hash.Write(salt[0])
+		checkError(err)
+	}
 
 	hashInBytes := hash.Sum(nil)[:]
 	shaFile := make([]byte, 40)
