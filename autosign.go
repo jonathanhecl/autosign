@@ -22,7 +22,10 @@ func checkError(e error) {
 	}
 }
 
-func Init(salt ...[]byte) string {
+func Init(salt ...[]byte) (outHash string, outCreated bool) {
+
+	outHash = ""
+	outCreated = false
 
 	var err error = nil
 	var needSign bool = true
@@ -86,14 +89,20 @@ func Init(salt ...[]byte) string {
 			checkError(err)
 		}
 
+		outCreated = true
+
 	} else {
 
 		if !bytes.Equal(shaFile, sign_found) {
 			checkError(errors.New("File corrupted!"))
 		}
 
+		outCreated = false
+
 	}
 
-	return string(shaFile[:])
+	outHash = string(shaFile[:])
+
+	return outHash, outCreated
 
 }
